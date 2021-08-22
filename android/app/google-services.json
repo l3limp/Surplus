@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "905972780685",
+    "project_id": "surplus-85701",
+    "storage_bucket": "surplus-85701.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905972780685:android:6d00fb64dff9eb0c515cc4",
+        "android_client_info": {
+          "package_name": "com.example.surplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905972780685-9vjvfb3o3idrpjied131hmlnqt7pusom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD68zej0569xoJUZX9IQuAgzXgX4yjLBB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905972780685-9vjvfb3o3idrpjied131hmlnqt7pusom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
