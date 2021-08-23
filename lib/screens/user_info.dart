@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:surplus/screens/sign_in.dart';
 import 'package:surplus/utils/authentication.dart';
+import 'package:surplus/widgets/navbar.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({Key? key, required User user})
@@ -25,7 +26,6 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
         var begin = Offset(-1.0, 0.0);
         var end = Offset.zero;
         var curve = Curves.ease;
-
         var tween =
         Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
@@ -40,13 +40,17 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
   @override
   void initState() {
     _user = widget._user;
-
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
+      appBar: AppBar(
+        title: Text('Surplus'),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.grey[700],
       body: SafeArea(
         child: Padding(
@@ -109,7 +113,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               ),
               SizedBox(height: 24.0),
               Text(
-                'You are now signed in using your Google account. To sign out of your account click the "Sign Out" button below.',
+                'Welcome!',
                 style: TextStyle(
                     color: Colors.grey.withOpacity(0.8),
                     fontSize: 14,
@@ -128,12 +132,12 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, "/productlist");
+                  Navigator.pushReplacementNamed(context, "/products");
                 },
                 child: Padding(
                   padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                   child: Text(
-                    'Products',
+                    'Shop',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

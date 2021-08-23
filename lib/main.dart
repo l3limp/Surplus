@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:surplus/screens/product_list.dart';
+import 'package:surplus/screens/cart.dart';
+import 'package:surplus/screens/shop.dart';
 import 'package:surplus/screens/sign_in.dart';
+import 'package:surplus/screens/user_info.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +20,9 @@ class MyApp extends StatelessWidget {
       ),
       home: SignInScreen(),
       routes: {
-        '/productlist': (context) => ProductList(),
-        // '/productdesc': (cobtext) => ProductDesc(),
         '/signIn': (context) => SignInScreen(),
+        '/cart': (context) => Cart(),
+        '/products': (context) => ShopPage(),
       },
     );
   }
