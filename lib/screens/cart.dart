@@ -10,6 +10,12 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     var cartItemsList = ModalRoute.of(context)!.settings.arguments as Map;
 
+    void removeItem(int index){
+      setState(() {
+        cartItemsList['items'].remove(cartItemsList['items'][index]);
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart'),
@@ -67,7 +73,9 @@ class _CartState extends State<Cart> {
                                       ),
                                       SizedBox(width: MediaQuery.of(context).size.width/15,),
                                       IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            removeItem(index);
+                                          },
                                           icon: Icon(
                                             Icons.delete,
                                             color: Colors.redAccent,

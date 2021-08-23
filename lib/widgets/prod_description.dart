@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProductDescription extends StatefulWidget {
+
+  User? user = FirebaseAuth.instance.currentUser;
   final Function addToCart;
   var product = {};
 
