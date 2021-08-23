@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:surplus/screens/cart.dart';
 import 'package:surplus/screens/shop.dart';
 import 'package:surplus/screens/sign_in.dart';
-import 'package:surplus/screens/user_info.dart';
 
 void main() {
   runApp(MyApp());
