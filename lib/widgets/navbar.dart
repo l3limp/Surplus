@@ -49,16 +49,6 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.shopping_cart,
-              color: Colors.amber[400],
-            ),
-            title: Text('Cart'),
-            onTap: () {
-              Navigator.pushNamed(context, '/cart');
-            },
-          ),
-          ListTile(
-            leading: Icon(
               Icons.logout,
               color: Colors.amber[400],
             ),
