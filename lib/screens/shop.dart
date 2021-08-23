@@ -41,7 +41,7 @@ class _ShopPageState extends State<ShopPage> {
     }
   }
 
-  void viewProduct(int id, int quantity) {
+  void viewProduct(int id, double quantity) {
     final newItem = Product(
         id: productsList[id]['id'],
         price: (productsList[id]['price']).toDouble(),

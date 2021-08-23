@@ -10,12 +10,15 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
 
     var cartItemsList = ModalRoute.of(context)!.settings.arguments as Map;
-    var totalPrice;
+    double totalPrice = 0;
 
     void calculateTotalAmount() {
       setState(() {
-        for(int i in cartItemsList['items'].length){
-          totalPrice += (cartItemsList['items'][i].quantity*cartItemsList['items'][i].price);
+        int i = 0;
+        while(i<cartItemsList['items'].length){
+          totalPrice = totalPrice + (cartItemsList['items'][i].quantity)*(cartItemsList['items'][i].price);
+          i = i + 1;
+          print(totalPrice);
         }
       });
     }
@@ -23,9 +26,9 @@ class _CartState extends State<Cart> {
     void removeItem(int index){
       setState(() {
         cartItemsList['items'].remove(cartItemsList['items'][index]);
+        calculateTotalAmount();
       });
     }
-
 
     return Scaffold(
       appBar: AppBar(
@@ -110,7 +113,7 @@ class _CartState extends State<Cart> {
                                         width: 10,
                                       ),
                                       Text(
-                                        'Price : ${cartItemsList['items'][index].price}',
+                                        'Price : \$${cartItemsList['items'][index].price}',
                                         style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.grey,
@@ -129,13 +132,13 @@ class _CartState extends State<Cart> {
           Positioned(
             bottom : 0.0,
             child: Container(
-              height: 50.0,
-              color: Colors.white,
-              width: MediaQuery.of(context).size.width,
-              child: Center(
-                child: Text('Total Amount: $totalPrice',
-                style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),),
-              )
+                height: 50.0,
+                color: Colors.white,
+                width: MediaQuery.of(context).size.width,
+                child: Center(
+                  child: Text('Total Amount: \$$totalPrice',
+                    style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),),
+                )
             ),
           ),
         ],

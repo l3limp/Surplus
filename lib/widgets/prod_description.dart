@@ -15,13 +15,13 @@ class ProductDescription extends StatefulWidget {
 
 class _ProductDescriptionState extends State<ProductDescription> {
   void addItem() {
-    final snackBar = SnackBar(content: Text('${widget.product['title']} successfully added to cart! :)'),);
+    final snackBar = SnackBar(content: Text('${widget.product['title']} successfully added to cart! :)'), duration: Duration(seconds: 2),);
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
     widget.addToCart(widget.product['id'], quantity);
     Navigator.of(context).pop();
   }
 
-  int quantity = 1;
+  double quantity = 1;
 
   @override
   Widget build(BuildContext context) {
