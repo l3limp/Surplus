@@ -95,7 +95,7 @@ class _ShopPageState extends State<ShopPage> {
             },
             icon: Icon(
               Icons.shopping_cart_outlined,
-              size: 20,
+              size: 25,
             ),
           ),
         ],

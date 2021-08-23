@@ -119,7 +119,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     fontSize: 14,
                     letterSpacing: 0.2),
               ),
-              SizedBox(height: 24.0),
+              SizedBox(height: 32.0),
               ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
@@ -137,7 +137,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                 child: Padding(
                   padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                   child: Text(
-                    'Shop',
+                    'Shop Now',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -147,7 +147,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 32.0),
               _isSigningOut
                   ? CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),

@@ -8,13 +8,24 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
+
     var cartItemsList = ModalRoute.of(context)!.settings.arguments as Map;
+    var totalPrice;
+
+    void calculateTotalAmount() {
+      setState(() {
+        for(int i in cartItemsList['items'].length){
+          totalPrice += (cartItemsList['items'][i].quantity*cartItemsList['items'][i].price);
+        }
+      });
+    }
 
     void removeItem(int index){
       setState(() {
         cartItemsList['items'].remove(cartItemsList['items'][index]);
       });
     }
+
 
     return Scaffold(
       appBar: AppBar(
@@ -99,7 +110,7 @@ class _CartState extends State<Cart> {
                                         width: 10,
                                       ),
                                       Text(
-                                        'Total Price : ${cartItemsList['items'][index].price*cartItemsList['items'][index].quantity}',
+                                        'Price : ${cartItemsList['items'][index].price}',
                                         style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.grey,
@@ -114,7 +125,19 @@ class _CartState extends State<Cart> {
                         ),
                       );
                     })),
-          )
+          ),
+          Positioned(
+            bottom : 0.0,
+            child: Container(
+              height: 50.0,
+              color: Colors.white,
+              width: MediaQuery.of(context).size.width,
+              child: Center(
+                child: Text('Total Amount: $totalPrice',
+                style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),),
+              )
+            ),
+          ),
         ],
       ),
     );
